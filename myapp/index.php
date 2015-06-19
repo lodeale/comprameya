@@ -48,6 +48,10 @@ $app->get('/categorias/',function(){
     echo json_encode($prod->results());
 });
 
+/**
+* package addProduct
+* param: @db conexiòn a Base de datos
+*/
 $app->post('/addProduct',function() use ($db){
     $post = $_POST;
     //var_dump($post);
