@@ -1,6 +1,7 @@
 <?php
 /*
 * Index.php
+* cambios echos por diego
 */
 require 'vendor/autoload.php';
 
