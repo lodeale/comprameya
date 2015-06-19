@@ -11,7 +11,7 @@ $app = new Slim();
 $db = new DB();
 
 $app->get('/',function(){
-    echo "hola mundo";
+    echo "Home Application";
 });
 
 $app->get('/buscar(/(:valor))',function($valor=false) use ($db) {
