@@ -1,5 +1,12 @@
 autores:
 
-- Diego zapiola
+- Diego
 
 Alejandro
+
+- Alejandro
+
+
+- Carlos A.
+
+
