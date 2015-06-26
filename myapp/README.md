@@ -2,4 +2,8 @@ autores:
 
 - Alejandro
 
+---------------
+
 - Carlos A.
+
+---------------
