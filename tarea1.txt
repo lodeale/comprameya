@@ -1,0 +1,24 @@
+@autors: guidoayalae
+		 cristianGabriel
+		 verotribb2
+		 diegohmaidana
+
+@description: Hola chicos, van a agarrar la tarea según su posicisión. Digamos guido agarra el 1, cristian el 2 y asi sucesivamente.
+
+No deben hacer un git push -u origin tarea1, hasta que yo les avise.
+Sólo deben comittear en su working copy o maquina local.
+Digamos:
+1) git add archivo_que_modifique
+2) git commit -m "Comentario de lo que hice"
+
+Solamente esos pasos deben de hacer y cambiar el archivo_que_modifique por el nombre del archivo que tocaron y el "comentario de lo que hice" tiene que ser algo descriptivo de lo que hicieron.
+
+Estas son las tareas, buena suerte !!! ...
+
+1) En el archivo routers/routerCategorias.php generar el método addCategoria igual a como esta routerProductos.php pero para la tabla categoria que esta en la base de datos comprameya.
+
+2) En el archivo routers/routerCategorias.php generar el método delCategoria igual a como esta routerProductos.php pero para la tabla categoria que esta en la base de datos comprameya. 
+
+3) En el archivo routers/routerCategorias.php generar el método buscarCategoria igual a como esta routerProductos.php pero para la tabla categoria que esta en la base de datos comprameya.
+
+4) En el archivo routers/routerCategorias.php colocar le método "categoria" que esta en el archivo index.php y posteriormente borrarlo de index.php sin generar conflicto.
