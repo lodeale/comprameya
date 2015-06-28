@@ -1,9 +1,8 @@
 <?php 
 
-$app->get('/buscar(/(:valor))',function($valor=false) use ($db) {
+$app->get('/buscarProducto(/(:valor))',function($valor=false) use ($db) {
     $query = "SELECT * FROM productos
-             WHERE id       = ?
-             OR    producto LIKE ?
+             WHERE descripcoin       = ?
              OR    precio   = ?";
     $prod = $db->getInstance()->consultar($query,array($valor,$valor,$valor));
     echo json_encode($prod->results());
@@ -24,20 +23,23 @@ $app->get('/productos(/(:idp))', function($idp=false){
     
 });
 
-/**
-* package addProduct
-* param: @db conexiòn a Base de datos
-*/
-$app->post('/addProduct',function() use ($db){
+$app->post('/addProducto',function() use ($db){
     $post = $_POST;
-    //var_dump($post);
-    $sql = "INSERT INTO productos 
-            (producto,precio,cantidad,id_categoria)
+    $sql = "INSERT INTO producos 
+            (descripcion,resumen,id_categoria,fecha_creado,cantidad,precio)
             VALUES 
-            (?,?,?,?)";
+            (?,?,?,NOW(),?,?)";
     $insert = $db->getInstance()->consultar($sql,array_values($post));
     echo json_encode($insert);
 });
 
-
+$app->get('/delProducto/:idp', function($idp) use ($db){
+    try {
+        $sql = "DELETE FROM productos WHERE id = ?";
+        $delete = $db->getInstance()->consultar($sql,array($idp));
+        echo json_encode($delete);
+    } catch (Exception $e) {
+        echo json_encode(array("Error"=>$e,"Message"=>"No se pudo borrar el elemento"));
+    }
+});
 ?>
