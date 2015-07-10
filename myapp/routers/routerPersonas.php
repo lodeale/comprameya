@@ -1,7 +1,4 @@
 <?php 
-
-
-
 $app->get('/delPersonas/:idp', function($idp) use ($db){
     try {
         $sql = "DELETE FROM personas WHERE id = ?";
@@ -11,4 +8,20 @@ $app->get('/delPersonas/:idp', function($idp) use ($db){
         echo json_encode(array("Error"=>$e,"Message"=>"No se pudo borrar el elemento"));
     }
 });
-?>
+
+
+$app->get('/personas(/(:idp))', function($idp=false){
+    global $db;
+    
+    $sql = "SELECT * FROM personas";
+    
+    if ($idp){
+        $sql .= ' WHERE id=' . $idp;
+    }
+    
+    $pers = $db->getInstance()->consultar($sql);
+    
+    echo json_encode($pers->results());    
+});
+
+
