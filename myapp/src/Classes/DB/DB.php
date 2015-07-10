@@ -49,7 +49,7 @@ class DB
 			$x = 1;
 			if(count($params)){
 				foreach($params as $param){
-					$this->_query->bindValue($x,%$param%);
+					$this->_query->bindValue($x,"%$param%");
 					$x++;
 				}
 			}
