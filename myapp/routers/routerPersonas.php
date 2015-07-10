@@ -19,7 +19,7 @@ $app->get('/personas(/(:idp))', function($idp=false){
         $sql .= ' WHERE id=' . $idp;
     }
     
-    $pers = $db->getInstance()->consultar($sql);
+    $pers = $db->getInstance()->consultar($sql, array());
     
     echo json_encode($pers->results());    
 });
