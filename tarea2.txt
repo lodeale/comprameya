@@ -1,6 +1,6 @@
 @autors: CFGimenez
 		 sambranaivan
-		 jclaarregin
+		 pablosingh
 		 aflorenciacabrera
 
 @description: Hola chicos, van a agarrar la tarea según su posicisión. Digamos CFGimenez agarra el 1, Sambranaivan el 2 y asi sucesivamente.
