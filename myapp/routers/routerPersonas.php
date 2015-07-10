@@ -24,4 +24,12 @@ $app->get('/personas(/(:idp))', function($idp=false){
     echo json_encode($pers->results());    
 });
 
-
+$app->post("/addPersonas",function() use ($db){
+	$post = $_POST;
+	$sql ="INSERT INTO personas
+			(descripcion,resumen,id_categoria,fecha_creado,cantidad,precio)
+			VALUES 
+			(?,?,?,NOW(),?,?)";
+	$insert = $db->getInstance()->consultar($sql,array_values($post));
+	echo json_encode($insert);
+});
