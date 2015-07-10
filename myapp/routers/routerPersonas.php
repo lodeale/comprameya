@@ -16,10 +16,10 @@ $app->get('/personas(/(:idp))', function($idp=false){
     $sql = "SELECT * FROM personas";
     
     if ($idp){
-        $sql .= ' WHERE id=' . $idp;
+        $sql .= ' WHERE id= ?';
     }
     
-    $pers = $db->getInstance()->consultar($sql, array());
+    $pers = $db->getInstance()->consultar($sql, array($idp));
     
     echo json_encode($pers->results());    
 });
