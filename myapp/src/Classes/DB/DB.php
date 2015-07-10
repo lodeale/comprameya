@@ -43,6 +43,26 @@ class DB
 		}
 		return $this;
 	}
+
+	public function buscar($sql, $params = array()){
+		if( $this->_query = $this->_pdo->prepare($sql) ){
+			$x = 1;
+			if(count($params)){
+				foreach($params as $param){
+					$this->_query->bindValue($x,%$param%);
+					$x++;
+				}
+			}
+			if($this->_query->execute()){
+				$this->_results = $this->_query->fetchAll(\PDO::FETCH_OBJ);
+				$this->_count = $this->_query->rowCount();
+			}else{
+				var_dump($this->_query->errorInfo());
+				$this->_error = true;
+			}
+		}
+		return $this;
+	}
 	
 	public function results(){
 		return $this->_results;
