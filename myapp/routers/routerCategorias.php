@@ -1,4 +1,16 @@
 <?php 
+
+
+$app->get('/categorias/',function(){
+    global $db;
+    
+    $sql = "SELECT * FROM categorias";
+    
+    $prod = $db->getInstance()->consultar($sql);
+    
+    echo json_encode($prod->results());
+});
+
 $app->get('/buscarCategoria(/(:valor))',function($valor=false) use ($db) {
     $query = "SELECT * FROM categorias
              WHERE categoria       = ?";

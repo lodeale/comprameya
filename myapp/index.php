@@ -17,16 +17,6 @@ $app->get('/',function(){
     echo "Home Application";
 });
 
-$app->get('/categorias/',function(){
-    global $db;
-    
-    $sql = "SELECT * FROM categorias";
-    
-    $prod = $db->getInstance()->consultar($sql);
-    
-    echo json_encode($prod->results());
-});
-
 $app->response->headers->set('Content-Type','application/json');
 $app->run();
 
