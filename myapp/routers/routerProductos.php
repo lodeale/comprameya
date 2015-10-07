@@ -2,9 +2,9 @@
 
 $app->get('/buscarProducto(/(:valor))',function($valor=false) use ($db) {
     $query = "SELECT * FROM productos
-             WHERE descripcoin       = ?
+             WHERE descripcion       = ?
              OR    precio   = ?";
-    $prod = $db->getInstance()->consultar($query,array($valor,$valor,$valor));
+    $prod = $db->getInstance()->consultar($query,array($valor,$valor));
     echo json_encode($prod->results());
 });
 

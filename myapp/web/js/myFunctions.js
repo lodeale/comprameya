@@ -35,3 +35,18 @@ function personas(){
         }
     });
 }
+
+function login(){
+    $.ajax({
+        url:'http://127.0.0.1/clasesUTN2015/clasephputn/myapp/index.php/login/',
+        type:'post',
+        success:function(res){
+            var divResponse = document.getElementById('divResponse');
+            if(res == 'Accept'){
+                divResponse.html="El usuario es correcto";
+            }else{
+                divResponse.html="El usuario no es correcto";
+            }
+        }
+    });
+}
